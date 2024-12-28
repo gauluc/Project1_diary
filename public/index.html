@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" contend="IE-edge">
+    <meta nam="viewort" content="width-device-width, initial-scale-1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Diary</title>
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-separate" id="forum-btn">Diễn đàn</li>
+                        <li class="header__navbar-item" id="diary-btn">Nhật ký</li>
+                    </ul>
+                    <ul class="header__navbar-list" id="navbar-list">
+                        <li class="header__navbar-item header__navbar-item-strong header__navbar-item-separate"
+                            id="open-register">Đăng ký
+                        </li>
+                        <li class="header__navbar-item header__navbar-item-strong" id="open-login">Đăng nhập</li>
+                        <li class="header__navbar-item header__navbar-user" id="user-info" style="display: none;">
+                            <span class="header__navbar-user-name">Name</span>
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item">
+                                    <a href="">Thông tin</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="" id="logout-btn">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="web__container">
+            <div class="grid">
+                <div class="grid__row web__content">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">TAG</h3>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Thể thao</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Hằng ngày</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Tình yêu</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Tình bạn</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Gia đình</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Thú cưng</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Công việc</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="grid__column-10">
+                        <div class="home-filter">
+                            <span class="home-filter_label">Sắp xếp theo</span>
+                            <button class="home-filter__btn btn">Mới nhất</button>
+                            <button class="home-filter__btn btn">Cũ nhất</button>
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-current">1</span>/1 </span>
+                                <div class="home-filter__page-control">
+                                    <a href="#" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fas fa-angle-left"></i>
+                                    </a>
+                                    <a href="#" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fas fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-article">
+                            <!-- Nội dung sẽ được thêm vào bởi JavaScript -->
+                        </div>
+
+                        <!-- <ul class="pagination home-article__pagination">
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link ">
+                                    <i class="pagination-item__icon fas fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="pagination-item pagination-item--active">
+                                <a href="" class="pagination-item__link ">1</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">2</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">3</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">...</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">14</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link ">
+                                    <i class="pagination-item__icon fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+
+        </footer>
+    </div>
+    <!--form nhật ký -->
+    <div class="diary" style="display: none;">
+        <div class="diary__read" style="display: none;">
+            <h3>Nhật kí đã lưu</h3>
+            <div class="diary__read-entry">
+                <p class="diary__read-entry-text">Nhật kí của bạn</p>
+                <button type="submit" class=" btn diary__read-entry-btn">Đóng</button>
+            </div>
+        </div>
+        <div class="diary__body">
+            <div class="diary__header">
+                <h1>Nhật kí của tôi</h1>
+                <div class="diary_header-read">
+                    <li class="diary__header-read-text">Xem lại nhật kí</li>
+                    <input type="date" name="diary-date" class="diary__header-read-input">
+                </div>
+            </div>
+            <div class="diary__date">
+                <div class="diary__date-text">
+                    <h3 class="diary__date-text-1">Chọn ngày:</h3>
+                </div>
+                <input type="date" name="diary-date" class="diary__date-input">
+                <div class="diary__date-btn">
+                    <button type="submit" class=" btn diary__date-btn-save">Lưu</button>
+                    <button type="submit" class=" btn diary__date-btn-share">Chia sẻ</button>
+                </div>
+                <select name="TAG" class="diary__date-tag">
+                    <option value="Thể thao">Thể thao</option>
+                    <option value="Gia đình">Gia đình</option>
+                    <option value="Tình bạn">Tình bạn</option>
+                    <option value="Tình yêu">Tình yêu</option>
+                    <option value="Hằng ngày">Hằng ngày</option>
+                    <option value="Thú cưng">Thú cưng</option>
+                    <option value="Công việc">Công việc</option>
+                </select>
+            </div>
+            <div class="diary__entry">
+                <textarea name="diary-entry" class="diary__entry-input"
+                    placeholder="Nhập nhật ký của bạn..."></textarea>
+            </div>
+        </div>
+
+    </div>
+    <!-- modal -->
+    <div class="modal" id="auth-modal" style="display: none;">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <!-- DK form -->
+            <div class="auth-form" id="register-form" style="display: none;">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <span class="auth-form__switch-btn" id="switch-to-login">Đăng nhập</span>
+                    </div>
+                    <form class="auth_form__form">
+                        <div class="auth-form__group">
+                            <input type="text" name="username" class="auth-form__input" placeholder="user name">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" name="password" class="auth-form__input" placeholder="your password">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" name="email" class="auth-form__input" placeholder="email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" name="phone" class="auth-form__input" placeholder="phone">
+                        </div>
+                        <div class="auth-form__controls">
+                            <button type="button" class="btn auth-form__controls-back" id="close-register">Trở
+                                lại</button>
+                            <button type="submit" class="btn btn--primary">Đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- DN form -->
+            <div class="auth-form" id="login-form" style="display: none;">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <span class="auth-form__switch-btn" id="switch-to-register">Đăng ký</span>
+                    </div>
+                    <form class="auth_form__form">
+                        <div class="auth-form__group">
+                            <input type="text" name="username" class="auth-form__input" placeholder="Tên đăng nhập">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" name="password" class="auth-form__input" placeholder="Mật khẩu">
+                        </div>
+                        <div class="auth-form__controls">
+                            <button type="button" class="btn auth-form__controls-back" id="close-login">Trở
+                                lại</button>
+                            <button type="submit" class="btn btn--primary">Đăng nhập</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Form thông tin người dùng -->
+            <div class="auth-form" id="user-info-form" style="display: none;">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Thông tin tài khoản</h3>
+                    </div>
+                    <form class="auth_form__form">
+                        <div class="auth-form__group">
+                            <label>Tên đăng nhập:</label>
+                            <input type="text" id="info-username" class="auth-form__input" readonly>
+                        </div>
+                        <div class="auth-form__group">
+                            <label>Mật khẩu mới:</label>
+                            <input type="password" name="password" id="info-password" class="auth-form__input"
+                                placeholder="Nhập mật khẩu mới">
+                        </div>
+                        <div class="auth-form__group">
+                            <label>Email:</label>
+                            <input type="email" name="email" id="info-email" class="auth-form__input"
+                                placeholder="Email">
+                        </div>
+                        <div class="auth-form__group">
+                            <label>Số điện thoại:</label>
+                            <input type="text" name="phone" id="info-phone" class="auth-form__input"
+                                placeholder="Số điện thoại">
+                        </div>
+                        <div class="auth-form__controls">
+                            <button type="button" class="btn auth-form__controls-back" id="close-info">Đóng</button>
+                            <button type="submit" class="btn btn--primary">Cập nhật</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

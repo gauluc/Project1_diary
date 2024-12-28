@@ -1,0 +1,378 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: orange;
+    --border-color: #dbdbdb;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto Condensed", serif;
+    box-sizing: border-box;
+}
+
+/* reponsive */
+.grid {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 800px;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: -12px;
+    margin-right: -12px;
+
+}
+
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+}
+
+.grid__column-2-0 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 20%;
+    margin-left: 12px;
+}
+
+.grid__column-10 {
+
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3333%;
+}
+
+/* animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    background-color: var(--white-color);
+    margin: auto;
+    position: relative;
+    z-index: 1001;
+    border-radius: 10px;
+    animation: growth linear 0.1s;
+    display: flex;
+    width: 500px;
+    margin-top: 200px;
+}
+
+/* button */
+.btn {
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disable {
+    color: #ccc;
+    cursor: default;
+    background-color: #999;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-item {
+    margin: 0 12px;
+    list-style: none;
+
+}
+
+.pagination-item--active .pagination-item__link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item__link {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    padding: 0 6px;
+}
+
+/* Form auth (đăng ký, đăng nhập, thông tin) */
+.auth-form {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.auth-form__container {
+    background-color: var(--white-color);
+    width: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Header navbar user menu */
+.header__navbar-user-menu {
+    position: absolute;
+    z-index: 1;
+    padding-left: 0;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 160px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style: none;
+    box-shadow: 0 1px 2px #e0e0e0;
+    display: none;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu {
+    display: block;
+}
+
+.diary {
+    display: block;
+    background-color: lightgoldenrodyellow;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+
+}
+
+.diary__header {
+    display: flex;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+    position: absolute;
+    top: 0;
+    width: 78%;
+    font-size: 20px;
+    margin-left: -750px;
+}
+
+.diary__date {
+    margin-left: -700px;
+    display: flex;
+    position: absolute;
+    top: 100px;
+    font-size: 30px;
+}
+
+.diary__date-input {
+    padding: 0 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: lightgreen;
+}
+
+.diary__date-text {
+    padding-right: 20px;
+    margin-top: -6px;
+}
+
+.diary__date-text-1 {
+    font-weight: 300;
+}
+
+.diary__entry {
+    position: absolute;
+    top: 160px;
+    right: 400px;
+    width: 66%;
+    height: 66%;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    resize: none;
+    margin-top: 5px;
+}
+
+.diary__date-tag {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.diary__entry-input {
+    width: 1000px;
+    height: 300px;
+    padding: 20px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.diary__date-btn {
+    padding: 20px 20px;
+    margin-left: 240px;
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+.diary__date-btn-save {
+    background-color: greenyellow;
+    border-radius: 4px;
+}
+
+.diary__date-btn-share {
+    background-color: red;
+    border-radius: 4px;
+    margin-left: 40px;
+}
+
+/* read */
+
+.diary__header-read-text {
+    list-style: none;
+    margin-top: 30px;
+    font-size: 30px;
+    position: absolute;
+    right: 280px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.diary__header-read-text:hover {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.diary__header-read-input {
+    padding: 20px 10px;
+    border: none;
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    background-color: aquamarine;
+    border-radius: 4px;
+}
+
+/* re */
+/* re */
+.diary__read {
+    z-index: 1002;
+    background-color: lightcoral;
+    max-width: 800px;
+    font-size: 20px;
+    padding: 10px 10px;
+    line-height: 24px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+
+.diary__read-entry-btn {
+    background-color: lightgreen;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-top: 20px;
+}
