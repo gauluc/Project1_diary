@@ -611,4 +611,32 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.classList.add('active');
         });
     });
+
+    // Thêm hàm để format ngày thành YYYY-MM-DD
+    function formatDate(date) {
+        const d = new Date(date);
+        let month = '' + (d.getMonth() + 1);
+        let day = '' + d.getDate();
+        const year = d.getFullYear();
+
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
+    // Khi trang web load xong
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lấy element input date
+        const dateInput = document.querySelector('.diary__date-input');
+
+        // Lấy ngày hiện tại
+        const today = new Date();
+
+        // Set giá trị max là ngày hiện tại
+        dateInput.max = formatDate(today);
+
+        // Set giá trị mặc định là ngày hiện tại
+        dateInput.value = formatDate(today);
+    });
 });
